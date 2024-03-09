@@ -19,8 +19,10 @@ import java.util.ArrayList;
 public class BaiBaoAdapter extends RecyclerView.Adapter<BaiBaoAdapter.UserViewHolder>{
     ArrayList<BaiBao> lstBaiBao;
     Context context;
-    public BaiBaoAdapter(ArrayList<BaiBao> lstBaiBao) {
+    UserCallBack userCallBack;
+    public BaiBaoAdapter(ArrayList<BaiBao> lstBaiBao /*,UserCallBack userCallBack*/) {
         this.lstBaiBao = lstBaiBao;
+        //this.userCallBack = userCallBack;
     }
 
     @NonNull
@@ -46,7 +48,7 @@ public class BaiBaoAdapter extends RecyclerView.Adapter<BaiBaoAdapter.UserViewHo
         holder.txtNguonbb.setText(item.getNguonbb());
         holder.txtThoigiandang.setText(item.getThoigiandang());
         //lay su kien
-        //holder.itemView.setOnClickListener(view -> userCall.onItemClick(item.getId()));
+        holder.itemView.setOnClickListener(view -> userCallBack.onItemClick(item.getId()));
     }
 
     @Override
@@ -64,5 +66,8 @@ public class BaiBaoAdapter extends RecyclerView.Adapter<BaiBaoAdapter.UserViewHo
             txtNguonbb = itemView.findViewById(R.id.txtNguonbb);
             txtThoigiandang = itemView.findViewById(R.id.txtThoigiandang);
         }
+    }
+    public interface UserCallBack{
+        void onItemClick(String id);
     }
 }

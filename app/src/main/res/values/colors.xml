@@ -7,4 +7,7 @@
     <color name="tittle_color">#1c1c1c</color>
     <color name="text_origin_color">#b6b6b6</color>
     <color name="low_red">#ffcccb</color>
+    <color name="colorPrimary">#afeeee</color>
+    <color name="colorAccent">#708090</color>
+    <color name="lightwhite">#f5f5f5</color>
 </resources>
